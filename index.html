@@ -29,10 +29,10 @@
 
 
 </head>
-<body class="poppins max-w-[1500px] mx-auto ">
+<body class="poppins">
 
     <header>
-        <nav class="flex flex-col md:flex-row justify-between items-center gap-10 p-10">
+        <nav class="flex flex-col md:flex-row justify-between items-center gap-10  py-10 px-40 ">
 
             <a href="#"><img class="w-40" src="assets/logo.png" alt=""></a>
 
@@ -58,7 +58,7 @@
         </nav>
     </header>
 
-    <main class="px-5"> 
+    <main class=" md:px-40 mx-auto "> 
 
         <section class="flex flex-col-reverse md:flex-row justify-between md:gap-10 py-10 items-center">
 
@@ -80,16 +80,33 @@
                 <img class="md:w-4/10 " src="assets/hero-image.svg" alt="">
         </section >
 
-        <div>
-            <h3 class="text-center md:text-left font-normal text-[62px]"><span class="text-[#345C54]">Let's Learn</span> Vocabularies</h3>
 
-            <div>
-                <button class="active:bg-[#345C54] border-1 border-[#345C54] rounded-full  p-5"><i class="fas fa-book-open"></i> Lesson -1</button>
+
+        <section class="flex gap-10 flex-col justify-center items-center">
+
+        <div>
+            <h3 class="text-center md:text-left font-normal text-[62px] mb-10"><span class="text-[#345C54]">Let's Learn</span> Vocabularies</h3>
+
+            <div class="">
+                <button class="active:bg-[#345C54] text-[#345C54] active:text-white border-1 border-[#345C54] rounded-full px-6 p-3 "><i class="pr-5 fa-solid fa-bookmark"></i>Lesson -1</button>
             </div>
         </div>
 
+        <!-- Card Area -->
 
-        <section>
+        <div class=" grid grid-cols-1 md:grid-cols-3 gap-5 rounded-3xl w-full bg-[#F4F6F6] p-10 justify-between items-center">
+
+            <div class="rounded-2xl bg-white p-8 flex gap-3 flex-col items-center hover:shadow-lg transform transition duration-300 hover:scale-105">
+                <h2 class="font-semibold text-[32px]">Eager</h2>
+                <p class="text-[20px]">Meaning /Pronounciation</p>
+                <p class="text-[28px]">"আগ্রহী / ইগার"</p>
+                <div class=" w-full flex justify-between">
+                    <button class="w-12 h-12 bg-[#EDF0F0] text-2xl rounded-full"><i class="text-[#345C54] fa-solid fa-circle-info"></i></button>
+                    <button class="w-12 h-12 bg-[#EDF0F0] text-xl rounded-full"><i class="text-[#345C54] fa-solid fa-volume-high"></i></button>
+                </div>
+            </div>
+
+        </div>
 
         </section>
 
@@ -100,7 +117,24 @@
 
     
 
-    <footer></footer>
+    <footer class="mt-20 bg-[#12201D] flex flex-col md:flex-row items-center justify-between py-10 px-30 md:px-40">
+        <div class="flex flex-col gap-3">
+            <img class=" md:w-20/100 mb-6" src="assets/logo-dark.png" alt="">
+            <h6 class="md:text-left text-center text-[28px] text-white hind-siliguri">ইংরেজি শিখুন সহজে</h6>
+            <p class="text-white md:text-left text-center text-[20px] ">Providing ED-Tech Applications since 2025</p>
+        </div>
+
+        <div>
+            <h6 class="text-[#A0A6A5] text-[22px] mt-10">Follow us</h6>
+            <div class="text-white text-[28px]">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+
+        </div>
+
+    </footer>
     
 </body>
 </html>
