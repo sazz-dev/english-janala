@@ -1,3 +1,5 @@
+// Add Leson Level
+
 const loadlessons = () => {
   fetch("https://openapi.programming-hero.com/api/levels/all") //promise of response
     .then((res) => res.json()) //promise of json data
@@ -23,10 +25,14 @@ const displaylesson = (lessons) => {
   }
 };
 
+// Remove Active Button
+
 const reomoveActive = () => {
   const lessonButton = document.querySelectorAll(".lesson-btn");
   lessonButton.forEach((btn) => btn.classList.remove("active"));
 };
+
+// Add Word's Content
 
 const loadLevelWord = (id) => {
   manageSpinner(true);
@@ -54,7 +60,7 @@ const displayLevelWord = (words) => {
                 <h2 class="text-[32px] mt-5">নেক্সট Lesson এ যান</h2>
             </div>`;
 
-            manageSpinner(false)
+    manageSpinner(false);
 
     return;
   }
@@ -158,3 +164,19 @@ const displayWordDetail = (word) => {
 };
 
 loadlessons();
+
+document.getElementById("btn-search").addEventListener("click", () => {
+  reomoveActive();
+  const input = document.getElementById("input-search");
+  const searchValue = input.value.trim().toLowerCase();
+  console.log(searchValue);
+
+  fetch("https://openapi.programming-hero.com/api/words/all")
+    .then((res) => res.json())
+    .then((data) => {
+      const allWords = data.data;
+      const filterWords = allWords.filter((word) => word.word.toLowerCase().includes(searchValue));
+      // console.log(filterWords)
+      displayLevelWord(filterWords)
+    })
+});
