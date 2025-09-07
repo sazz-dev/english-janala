@@ -1,3 +1,11 @@
+// Add Sound
+
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
+
 // Add Leson Level
 
 const loadlessons = () => {
@@ -85,7 +93,9 @@ const displayLevelWord = (words) => {
                       word.id
                     })" class="w-12 h-12 bg-[#EDF0F0] text-2xl rounded-full"><i class="text-[#345C54] fa-solid fa-circle-info"></i></button>
 
-                    <button class="w-12 h-12 bg-[#EDF0F0] text-xl rounded-full"><i class="text-[#345C54] fa-solid fa-volume-high"></i></button>
+                    <button onclick="pronounceWord('${
+                      word.word
+                    }')" class="w-12 h-12 bg-[#EDF0F0] text-xl rounded-full"><i class="text-[#345C54] fa-solid fa-volume-high"></i></button>
                 </div>
             </div>
         
@@ -175,8 +185,10 @@ document.getElementById("btn-search").addEventListener("click", () => {
     .then((res) => res.json())
     .then((data) => {
       const allWords = data.data;
-      const filterWords = allWords.filter((word) => word.word.toLowerCase().includes(searchValue));
+      const filterWords = allWords.filter((word) =>
+        word.word.toLowerCase().includes(searchValue)
+      );
       // console.log(filterWords)
-      displayLevelWord(filterWords)
-    })
+      displayLevelWord(filterWords);
+    });
 });
